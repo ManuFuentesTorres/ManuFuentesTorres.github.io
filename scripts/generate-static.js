@@ -26,6 +26,8 @@ async function build() {
 
         const allData = { portfolio, projects, certifications, experience, skills, contact };
 
+        console.log('Datos pasados a EJS:', allData);
+
         // 2. Renderizar cada página con EJS
         const pagesToRender = [
             { template: 'index.ejs', output: 'index.html' },
@@ -43,7 +45,7 @@ async function build() {
 
             console.log(`Renderizando ${page.template} -> ${page.output}`);
 
-            const html = await ejs.renderFile(templatePath, { portfolio: allData.portfolio, projects: allData.projects, certifications: allData.certifications, experience: allData.allData.experience, skills: allData.skills, contact: allData.contact }, { async: true });
+            const html = await ejs.renderFile(templatePath, { portfolio: allData.portfolio, projects: allData.projects, certifications: allData.certifications, experience: allData.experience, skills: allData.skills, contact: allData.contact }, { async: true });
 
             await fs.writeFile(outputPath, html, 'utf-8');
         }
