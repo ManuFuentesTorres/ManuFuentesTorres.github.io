@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+# Concurrency group para evitar despliegues simultáneos
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 # Permisos especiales para el GITHUB_TOKEN
 permissions:
   contents: read
@@ -17,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js 🏗️
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
@@ -39,10 +44,17 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    
+    # Permisos específicos para el job de deploy
+    permissions:
+      pages: write
+      id-token: write
+    
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
       - name: Deploy to GitHub Pages 🚀
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
