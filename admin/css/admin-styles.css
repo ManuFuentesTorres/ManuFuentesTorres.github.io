@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #2C3E50; /* Azul oscuro */
+    --secondary-color: #3498DB; /* Azul claro */
+    --danger-color: #E74C3C; /* Rojo */
+    --success-color: #2ECC71; /* Verde */
+    --light-bg: #ECF0F1; /* Gris claro */
+    --white: #FFFFFF;
+    --text-color: #333;
+    --border-color: #BDC3C7;
+}
+
+/* Reset y Globales */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Layout Principal */
+#main-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-header h1 {
+    margin: 0;
+    color: var(--white);
+}
+
+#container {
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding-top: 1rem;
+    height: calc(100vh - 68px); /* Ajustar altura */
+}
+
+#sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar nav ul li a {
+    display: block;
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    transition: background-color 0.3s;
+}
+
+#sidebar nav ul li a:hover, #sidebar nav ul li a.active {
+    background-color: var(--secondary-color);
+}
+
+#main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    height: calc(100vh - 68px);
+}
+
+.content-section {
+    display: none; /* Ocultas por defecto */
+}
+
+.content-section.active {
+    display: block; /* Visible la activa */
+}
+
+/* Formularios */
+form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Botones */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+#logout-btn {
+    background: var(--danger-color);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - M. Fuentes</title>
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <style>
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #3498DB;
+            --danger-color: #E74C3C;
+            --light-bg: #ECF0F1;
+            --text-color: #333;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--light-bg); color: var(--text-color); }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <h1>Panel de Administración</h1>
+        <button id="logout-btn">Cerrar Sesión</button>
+    </header>
+
+    <div id="container">
+        <aside id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#perfil" class="nav-link active">👤 Perfil</a></li>
+                    <li><a href="#proyectos" class="nav-link">📁 Proyectos</a></li>
+                    <li><a href="#certificaciones" class="nav-link">🏆 Certificaciones</a></li>
+                    <li><a href="#habilidades" class="nav-link">⚙️ Habilidades</a></li>
+                    <li><a href="#experiencia" class="nav-link">💼 Experiencia</a></li>
+                    <li><a href="#contacto" class="nav-link">📧 Contacto</a></li>
+                    <li><a href="#herramientas" class="nav-link">🛠️ Herramientas</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main id="main-content">
+            <!-- Las secciones se cargarán aquí dinámicamente -->
+            <section id="perfil" class="content-section active">
+                <h2>Perfil Profesional</h2>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Título Profesional</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Biografía</label>
+                        <textarea id="bio" name="bio"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Ubicación</label>
+                        <input type="text" id="location" name="location">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn URL</label>
+                        <input type="text" id="linkedin" name="linkedin">
+                    </div>
+                    <div class="form-group">
+                        <label for="github">GitHub URL</label>
+                        <input type="text" id="github" name="github">
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">Foto de Perfil</label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                        <img id="profile-preview" src="" alt="Vista previa de la foto" style="max-width: 200px; margin-top: 10px;">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+            </section>
+
+            <section id="proyectos" class="content-section">
+                <h2>Gestión de Proyectos</h2>
+                <!-- Contenido de proyectos -->
+            </section>
+
+            <section id="certificaciones" class="content-section">
+                <h2>Gestión de Certificaciones</h2>
+                <!-- Contenido de certificaciones -->
+            </section>
+
+            <section id="habilidades" class-="content-section">
+                <h2>Gestión de Habilidades</h2>
+                <!-- Contenido de habilidades -->
+            </section>
+
+            <section id="experiencia" class="content-section">
+                <h2>Gestión de Experiencia</h2>
+                <!-- Contenido de experiencia -->
+            </section>
+
+            <section id="contacto" class="content-section">
+                <h2>Información de Contacto</h2>
+                <!-- Contenido de contacto -->
+            </section>
+
+            <section id="herramientas" class="content-section">
+                <h2>Herramientas y Acciones</h2>
+                <!-- Contenido de herramientas -->
+            </section>
+        </main>
+    </div>
+
+    <script src="js/api-handler.js"></script>
+    <script src="js/form-handlers.js"></script>
+    <script src="js/file-manager.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

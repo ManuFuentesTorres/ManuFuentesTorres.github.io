@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= portfolio.name %> - <%= portfolio.title %></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <%- include('components/navbar') %>
+
+    <header>
+        <h1><%= portfolio.name %></h1>
+        <p><%= portfolio.title %></p>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Bienvenido a mi portafolio</h2>
+            <p><%= portfolio.bio %></p>
+        </section>
+    </main>
+
+    <%- include('components/footer') %>
+</body>
+</html>
