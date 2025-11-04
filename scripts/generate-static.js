@@ -43,7 +43,7 @@ async function build() {
 
             console.log(`Renderizando ${page.template} -> ${page.output}`);
 
-            const html = await ejs.renderFile(templatePath, allData, { async: true });
+            const html = await ejs.renderFile(templatePath, { portfolio: allData.portfolio, projects: allData.projects, certifications: allData.certifications, experience: allData.allData.experience, skills: allData.skills, contact: allData.contact }, { async: true });
 
             await fs.writeFile(outputPath, html, 'utf-8');
         }
