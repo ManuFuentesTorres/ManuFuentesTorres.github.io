@@ -1,4 +1,12 @@
-const API_BASE_URL = '/api';
+let API_BASE_URL;
+
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+  // Entorno de desarrollo local
+  API_BASE_URL = '/api';
+} else {
+  // Entorno de producción: ¡IMPORTANTE! Reemplaza esta URL con la de tu backend desplegado.
+  API_BASE_URL = 'https://manufuentestorres-github-io.onrender.com/api';
+}
 const ADMIN_PASSWORD_KEY = 'admin_password';
 
 /**
