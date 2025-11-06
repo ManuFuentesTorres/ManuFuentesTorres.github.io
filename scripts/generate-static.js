@@ -50,10 +50,11 @@ async function build() {
             await fs.writeFile(outputPath, html, 'utf-8');
         }
 
-        // 3. Copiar assets (CSS, JS, etc.) - esto se puede mejorar
-        // Por ahora, los archivos ya están en public/css y public/js
-        console.log('Copiando assets...');
-        // (Lógica de copia si los assets estuvieran en otro lugar)
+        // 3. Copiar la carpeta admin al directorio public
+        console.log('Copiando la carpeta admin...');
+        const adminSourceDir = path.join(__dirname, '..', 'admin');
+        const adminDestDir = path.join(publicDir, 'admin');
+        await fs.cp(adminSourceDir, adminDestDir, { recursive: true });
 
         console.log('Build completado con éxito!');
 
