@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadProfileData();
                 break;
             case 'proyectos':
-                // loadProjectsData();
+                loadProjectsData();
                 break;
             // etc.
         }

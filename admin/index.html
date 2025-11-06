@@ -87,7 +87,56 @@
 
             <section id="proyectos" class="content-section">
                 <h2>Gestión de Proyectos</h2>
-                <!-- Contenido de proyectos -->
+                <button id="new-project-btn" class="btn btn-primary">Nuevo Proyecto</button>
+                <div id="projects-list" class="data-list"></div>
+
+                <form id="project-form" class="data-form" style="display:none;">
+                    <h3><span id="project-form-title">Añadir Nuevo Proyecto</span></h3>
+                    <input type="hidden" id="project-id" name="id">
+                    <div class="form-group">
+                        <label for="project-title">Título</label>
+                        <input type="text" id="project-title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-description">Descripción</label>
+                        <textarea id="project-description" name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-technologies">Tecnologías (separadas por comas)</label>
+                        <input type="text" id="project-technologies" name="technologies">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-image">Imagen del Proyecto</label>
+                        <input type="file" id="project-image" name="image" accept="image/*">
+                        <img id="project-image-preview" src="" alt="Vista previa de la imagen" style="max-width: 200px; margin-top: 10px; display:none;">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-role">Rol</label>
+                        <input type="text" id="project-role" name="role">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-context">Contexto</label>
+                        <textarea id="project-context" name="context"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-process">Proceso</label>
+                        <textarea id="project-process" name="process"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-results">Resultados</label>
+                        <textarea id="project-results" name="results"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-learnings">Aprendizajes</label>
+                        <textarea id="project-learnings" name="learnings"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-date">Fecha</label>
+                        <input type="date" id="project-date" name="date">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Proyecto</button>
+                    <button type="button" id="cancel-project-btn" class="btn btn-danger">Cancelar</button>
+                </form>
             </section>
 
             <section id="certificaciones" class="content-section">

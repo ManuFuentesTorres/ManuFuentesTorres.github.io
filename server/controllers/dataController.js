@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-const dataFilePath = path.join(__dirname, '..', 'data');
+const dataFilePath = path.join(__dirname, '..', '..', 'data');
 
 /**
  * Lee datos de un archivo JSON.

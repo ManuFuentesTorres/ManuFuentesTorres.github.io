@@ -12,6 +12,7 @@ const certificationsRoutes = require('./routes/certifications');
 const experienceRoutes = require('./routes/experience');
 const skillsRoutes = require('./routes/skills');
 const uploadRoute = require('./routes/upload');
+const toolsRoute = require('./routes/tools');
 const authMiddleware = require('./middleware/auth');
 
 const app = express();
@@ -55,6 +56,7 @@ app.use('/api/certifications', certificationsRoutes);
 app.use('/api/experience', experienceRoutes);
 app.use('/api/skills', skillsRoutes);
 app.use('/api/upload', uploadRoute);
+app.use('/api/tools', toolsRoute);
 
 
 // --- Middleware de Manejo de Errores ---

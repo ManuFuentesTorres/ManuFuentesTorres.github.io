@@ -20,9 +20,10 @@ router.get('/', async (req, res, next) => {
 const { validatePortfolio } = require('../middleware/validation');
 
 // PUT /api/portfolio - Actualizar perfil
-router.put('/', validatePortfolio, async (req, res, next) => {
+router.post('/', validatePortfolio, async (req, res, next) => {
   try {
-    const updatedData = req.body;
+    const existingData = await readData(PORTFOLIO_FILE);
+    const updatedData = { ...existingData, ...req.body };
     updatedData.lastUpdated = new Date().toISOString();
     
     await writeData(PORTFOLIO_FILE, updatedData);
